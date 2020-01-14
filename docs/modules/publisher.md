@@ -322,12 +322,6 @@ The complete usage of the application can be shown using the `--help` command li
                                        The value must follow the syntactical rules of a
                                        DNS hostname.
                                        Default: not set
-              --ic, --iotcentral     publisher will send OPC UA data in IoTCentral
-                                       compatible format (DisplayName of a node is used
-                                       as key, this key is the Field name in IoTCentral)
-                                       . you need to ensure that all DisplayName's are
-                                       unique. (Auto enables fetch display name)
-                                       Default: False
               --sw, --sessionconnectwait=VALUE
                                      specify the wait time in seconds publisher is
                                        trying to connect to disconnected endpoints and
@@ -627,7 +621,7 @@ To add OPC Publisher as module to your IoT Edge deployment, you go to the Azure 
         {
           "routes": {
             "processingModuleToIoTHub": "FROM /messages/modules/processingModule/outputs/* INTO $upstream",
-            "opcPublisherToProcessingModule": "FROM /messages/modules/publisher INTO BrokeredEndpoint(\"/modules/processingModule/inputs/input1\")"
+            "opcPublisherToProcessingModule": "FROM /messages/modules/opcpublisher INTO BrokeredEndpoint(\"/modules/processingModule/inputs/input1\")"
         }
 
 * Back in the `Set Modules` page, select `Next`, till you reach the last page of the configuration.
