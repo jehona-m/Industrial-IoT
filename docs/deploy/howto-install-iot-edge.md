@@ -43,7 +43,7 @@ When running the industrial IoT Edge modules in host (transparent) network, the 
 - Create a new virtual switch named host having attached to an external network interface (e.g. "Ethernet 2").
 
     ```bash
-New-VMSwitch -name host -NetAdapterName "<Adapter Name>" -AllowManagementOS $true
+    New-VMSwitch -name host -NetAdapterName "<Adapter Name>" -AllowManagementOS $true
     ```
 
 - To make sure the container is assigned an IP address it can either obtain a:
