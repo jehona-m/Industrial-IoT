@@ -12,7 +12,7 @@ The OPC Publisher module connects to OPC UA servers and publishes data from thes
 
 A Time Series Insights Environment is automatically created as part of the [deployment](../deploy/howto-deploy-all-in-one.md) step run as prerequisite to the tutorials.
 
-This how-to guide shows you how to visualize and analyze the OPC UA Telemetry using this Time Series Insights environment.
+This tutorial shows you how to visualize and analyze the OPC UA Telemetry using this Time Series Insights environment.
 
 ## Time Series Insights explorer
 
