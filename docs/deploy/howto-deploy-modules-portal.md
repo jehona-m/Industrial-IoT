@@ -2,15 +2,15 @@
 
 [Home](howto-install-iot-edge.md)
 
-This article explains how to deploy the Industrial IoT Edge modules to [Azure IoT Edge](https://azure.microsoft.com/services/iot-edge/) using the Azure Portal and Marketplace.
+This article explains how to deploy the Industrial IoT Edge modules to [Azure IoT Edge](https://azure.microsoft.com/services/iot-edge/) using the Azure Portal.
 
-Before you begin, make sure you followed the [instructions to set up a IoT Edge device](howto-install-iot-edge.md) and have a running IoT Edge Gateway.
+Before you begin, make sure you followed the [instructions to set up an IoT Edge device](howto-install-iot-edge.md) and have a running IoT Edge Gateway.
 
 To deploy all required modules to the Gateway using the Azure Portal...  
 
 1. Sign in to the [Azure portal](https://portal.azure.com/) and navigate to the IoT Hub deployed earlier.
 
-   > An simple way to locate your IoT Hub is to find the resource group variable in your `.env` file.  This resource group contains the IoT Hub.
+   > A simple way to locate your IoT Hub is to find the resource group variable in your `.env` file. This resource group contains the IoT Hub.
 
 2. Select **IoT Edge** from the left-hand menu.
 
@@ -20,16 +20,16 @@ To deploy all required modules to the Gateway using the Azure Portal...
 
 5. In the **Deployment modules** section of the page, select **Add** and **IoT Edge Module.**
 
-6. In the **IoT Edge Custom Module** dialog use `discovery` as name for the module, then specify the container *image URI* as
+6. In the **IoT Edge Custom Module** dialog use `discovery` as the name for the module, then specify the container *image URI* as
 
    ```bash
-mcr.microsoft.com/iotedge/discovery:latest
+   mcr.microsoft.com/iotedge/discovery:latest
    ```
 
    As *create options* use the following JSON:
 
    ```json
-{"NetworkingConfig":{"EndpointsConfig":{"host":{}}},"HostConfig":{"NetworkMode":"host","CapAdd":["NET_ADMIN"]}}
+   {"NetworkingConfig":{"EndpointsConfig":{"host":{}}},"HostConfig":{"NetworkMode":"host","CapAdd":["NET_ADMIN"]}}
    ```
 
    Fill out the optional fields if necessary. For more information about container create options, restart policy, and desired status see [EdgeAgent desired properties](https://docs.microsoft.com/azure/iot-edge/module-edgeagent-edgehub#edgeagent-desired-properties). For more information about the module twin see [Define or update desired properties](https://docs.microsoft.com/azure/iot-edge/module-composition#define-or-update-desired-properties).
@@ -39,9 +39,8 @@ mcr.microsoft.com/iotedge/discovery:latest
 8. In the **IoT Edge Custom Module** dialog use `opctwin` as name for the module, then specify the container *image URI* as
 
    ```bash
-mcr.microsoft.com/iotedge/opc-twin:latest
+   mcr.microsoft.com/iotedge/opc-twin:latest
    ```
-
    Leave the *create options* empty.
 
 9. Select **Save** and repeat step **5**.  
@@ -49,7 +48,7 @@ mcr.microsoft.com/iotedge/opc-twin:latest
 10. In the IoT Edge Custom Module dialog, use `opcpublisher` as name for the module and the container *image URI* as
 
     ```bash
-mcr.microsoft.com/iotedge/opc-publisher:latest
+    mcr.microsoft.com/iotedge/opc-publisher:latest
     ```
 
     Leave the *create options* empty.
@@ -68,9 +67,9 @@ mcr.microsoft.com/iotedge/opc-publisher:latest
     }
     ```
 
-    and select **Next**
+    and select **Next**.
 
-13. Review your deployment information and manifest.  It should look like this [deployment manifest](deployment-manifest.md).  Select **Submit**.
+13. Review your deployment information and manifest. It should look like this [deployment manifest](deployment-manifest.md).  Select **Submit**.
 
 14. Once you've deployed modules to your device, you can view all of them in the **Device details** page of the portal. This page displays the name of each deployed module, as well as useful information like the deployment status and exit code.
 
